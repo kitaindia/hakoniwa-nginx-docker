@@ -1,0 +1,5 @@
+deb http://httpredir.debian.org/debian jessie main
+deb http://httpredir.debian.org/debian jessie-updates main
+deb http://security.debian.org jessie/updates main
+deb http://nginx.org/packages/debian/ jessie nginx
+deb-src http://nginx.org/packages/debian/ jessie nginx
