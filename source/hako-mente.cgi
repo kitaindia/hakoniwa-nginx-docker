@@ -15,7 +15,7 @@
 # ――――――――――――――――――――――――――――――
 
 # マスターパスワード
-my($masterpassword) = 'yourpassword';
+my($masterpassword) = $ENV{MASTER_PASSWORD};
 
 # 1ターンが何秒か
 my($unitTime) = 21600; # 6時間
@@ -24,7 +24,7 @@ my($unitTime) = 21600; # 6時間
 my($dirMode) = 0755;
 
 # このファイル
-my($thisFile) = 'http://場所/hako-mente.cgi';
+my($thisFile) = $ENV{BASE_DIR}.'/hako-mente.cgi';
 
 # データディレクトリの名前
 # hakojima.cgi中のものと合わせてください。
@@ -98,7 +98,7 @@ sub myrmtree {
     my($fileName);
     while($fileName = readdir(DIN)) {
 	unlink("$dn/$fileName");
-    } 
+    }
     closedir(DIN);
     rmdir($dn);
 }
@@ -110,7 +110,7 @@ sub currentMode {
     my($fileName);
     while($fileName = readdir(DIN)) {
 	fileCopy("${dirName}.bak$currentID/$fileName", "${dirName}/$fileName");
-    } 
+    }
     closedir(DIN);
 }
 
@@ -186,7 +186,7 @@ END
 	if($dn =~ /^${dirName}.bak(.*)/) {
 	    dataPrint($1);
 	}
-    } 
+    }
     closedir(DIN);
 }
 
@@ -272,27 +272,27 @@ sub cgiInput {
     } elsif($line =~ /NTIME/) {
 	$mainMode = 'time';
 	if($line =~ /YEAR=([0-9]*)/) {
-	    $ctYear = $1; 
+	    $ctYear = $1;
 	}
 	if($line =~ /MON=([0-9]*)/) {
-	    $ctMon = $1; 
+	    $ctMon = $1;
 	}
 	if($line =~ /DATE=([0-9]*)/) {
-	    $ctDate = $1; 
+	    $ctDate = $1;
 	}
 	if($line =~ /HOUR=([0-9]*)/) {
-	    $ctHour = $1; 
+	    $ctHour = $1;
 	}
 	if($line =~ /MIN=([0-9]*)/) {
-	    $ctMin = $1; 
+	    $ctMin = $1;
 	}
 	if($line =~ /NSEC=([0-9]*)/) {
-	    $ctSec = $1; 
+	    $ctSec = $1;
 	}
     } elsif($line =~ /STIME/) {
 	$mainMode = 'stime';
 	if($line =~ /SSEC=([0-9]*)/) {
-	    $ctSec = $1; 
+	    $ctSec = $1;
 	}
     }
 
