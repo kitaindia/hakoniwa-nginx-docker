@@ -15,7 +15,7 @@
 # ――――――――――――――――――――――――――――――
 
 # マスターパスワード
-my($masterPassword) = 'password';
+my($masterpassword) = $ENV{MASTER_PASSWORD};
 
 # 1ターンが何秒か
 my($unitTime) = 21600; # 6時間
@@ -24,7 +24,7 @@ my($unitTime) = 21600; # 6時間
 my($dirMode) = 0755;
 
 # このファイル
-my($thisFile) = 'http://localhost:5005' + '/hako-mente.cgi';
+my($thisFile) = $ENV{BASE_DIR}.'/hako-mente.cgi';
 
 # データディレクトリの名前
 # hakojima.cgi中のものと合わせてください。

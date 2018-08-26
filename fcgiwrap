@@ -40,7 +40,16 @@ DAEMON_OPTS="-f"        # By default we redirect STDERR output from executed
                         # CGI through FastCGI, to disable this behaviour set
                         # DAEMON_OPTS to an empty value in the default's file
 
-ENV_VARS="PATH='$PATH'" # We reset the environ for spawn-fcgi, but we use the
+ENV_VARS="PATH='$PATH'
+BASE_DIR='http://localhost:5000'
+IMAGE_DIR='http://localhost:5000/images'
+MASTER_PASSWORD='password'
+SPECIAL_PASSWORD='specielpassword'
+ADMIN_NAME='admin'
+EMAIL='noname@example.com'
+BBS='http://localhost:5000'
+TOPPAGE='http://localhost:5000'"
+                        # We reset the environ for spawn-fcgi, but we use the
                         # contents of this variable as a prefix when calling it
                         # to export some variables (currently just the PATH)
 DIETIME=10              # Time to wait for the server to die, in seconds

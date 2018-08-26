@@ -29,11 +29,11 @@
 # my($baseDir) = 'http://cgi2.bekkoame.ne.jp/cgi-bin/user/u5534/hakoniwa';
 # とする。最後にスラッシュ(/)は付けない。
 
-my($baseDir) = 'http://サーバー/ディレクトリ';
+my($baseDir) = $ENV{BASE_DIR};
 
 # 画像ファイルを置くディレクトリ
 # my($imageDir) = 'http://サーバー/ディレクトリ';
-my($imageDir) = 'http://サーバー/ディレクトリ';
+my($imageDir) = $ENV{IMAGE_DIR};
 
 # jcode.plの位置
 
@@ -44,24 +44,24 @@ my($jcode) = './jcode.pl';
 # マスターパスワード
 # このパスワードは、すべての島のパスワードを代用できます。
 # 例えば、「他の島のパスワード変更」等もできます。
-my($masterPassword) = 'yourpassword';
+my($masterPassword) = $ENV{MASTER_PASSWORD};
 
 # 特殊パスワード
 # このパスワードで「名前変更」を行うと、その島の資金、食料が最大値になります。
 # (実際に名前を変える必要はありません。)
-$HspecialPassword = 'yourspecialpassword';
+$HspecialPassword = $ENV{SPECIAL_PASSWORD};
 
 # 管理者名
-my($adminName) = '管理者の名前';
+my($adminName) = $ENV{ADMIN_NAME};
 
 # 管理者のメールアドレス
-my($email) = '管理者@どこか.どこか.どこか';
+my($email) = $ENV{EMAIL};
 
 # 掲示板アドレス
-my($bbs) = 'http://サーバー/掲示板.cgi';
+my($bbs) = $ENV{BBS};
 
 # ホームページのアドレス
-my($toppage) = 'http://サーバー/ホームページ.html';
+my($toppage) = $ENV{TOPPAGE};
 
 # ディレクトリのパーミッション
 # 通常は0755でよいが、0777、0705、0704等でないとできないサーバーもあるらしい
