@@ -41,14 +41,14 @@ DAEMON_OPTS="-f"        # By default we redirect STDERR output from executed
                         # DAEMON_OPTS to an empty value in the default's file
 
 ENV_VARS="PATH='$PATH'
-BASE_DIR='http://localhost:5000'
-IMAGE_DIR='http://localhost:5000/images'
-MASTER_PASSWORD='password'
-SPECIAL_PASSWORD='specielpassword'
-ADMIN_NAME='admin'
-EMAIL='noname@example.com'
-BBS='http://localhost:5000'
-TOPPAGE='http://localhost:5000'"
+BASE_DIR='$BASE_DIR'
+IMAGE_DIR='$IMAGE_DIR'
+MASTER_PASSWORD='$MASTER_PASSWORD'
+SPECIAL_PASSWORD='$SPECIAL_PASSWORD'
+ADMIN_NAME='$ADMIN'
+EMAIL='$EMAIL'
+BBS='$BBS'
+TOPPAGE='$TOPPAGE'"
                         # We reset the environ for spawn-fcgi, but we use the
                         # contents of this variable as a prefix when calling it
                         # to export some variables (currently just the PATH)
